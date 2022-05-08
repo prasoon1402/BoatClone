@@ -215,6 +215,11 @@ body {
   text-align: center;
   padding: 10px;
 }
+#footer_bottom img{
+   width: 20%;
+   height: 100%;
+
+}
 #footer_bottom>div{
     display: flex;
     justify-content: space-around;
