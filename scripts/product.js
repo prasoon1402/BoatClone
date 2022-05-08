@@ -4,20 +4,7 @@ document.getElementById("menu").innerHTML = menu()
 document.getElementById("more").innerHTML = more()
 document.getElementById('footer').innerHTML = footer();
 // <--------------------------------------navbar navigation function ------------------------------------------------->
-let sum=0;
-let items = JSON.parse(localStorage.getItem("items"))
-for(let i=0;i<=items.length-1;i++){
-sum=sum+Number(items[i].price);
-localStorage.setItem("price",JSON.stringify(sum))
-}
-console.log(sum)
-let cart = document.getElementsByClassName("fa-cart-shopping");
-console.log(cart)
-if(items.length>0){
-    cart[0].style.color = "red"
-}else{
-    cart[0].style.color = "white"
-}
+
 document.getElementById("shop").addEventListener("click", () => {
     event.preventDefault()
     let menu = document.querySelectorAll("#menu");
@@ -76,9 +63,9 @@ price_div.append(price,strike,save)
 let add_cart=document.createElement("button");
 add_cart.addEventListener("click",()=>{
     
+    arr.push(el);
+    localStorage.setItem("items",JSON.stringify(arr));
     showas_data(el);
-  arr.push(el);
-  localStorage.setItem("items",JSON.stringify(arr));
     // window.location.reload();
 //   showas_data(el,index);
 
@@ -125,7 +112,7 @@ desc2.innerText=el.disc2;
 img2_div.append(img2,desc2)
 document.getElementById("img_div2").append(img2_div)
 })
-show_data();
+show_data(arr);
 
 let user = document.getElementsByClassName("fa-user");
 user[0].addEventListener("click",()=>{
@@ -141,3 +128,17 @@ logo.addEventListener("click",()=>{
     window.location.href = "index.html"
     
 })
+let sum=0;
+let items = JSON.parse(localStorage.getItem("items"))
+for(let i=0;i<=items.length-1;i++){
+sum=sum+Number(items[i].price);
+localStorage.setItem("price",JSON.stringify(sum))
+}
+console.log(sum)
+let cart = document.getElementsByClassName("fa-cart-shopping");
+console.log(cart)
+if(items.length>0){
+    cart[0].style.color = "red"
+}else{
+    cart[0].style.color = "white"
+}

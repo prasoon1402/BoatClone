@@ -1,8 +1,8 @@
 let data=JSON.parse(localStorage.getItem("items"));
-console.log(data);
+console.log("data",data);
 // let count=1;
 
-function show_data(){
+function show_data(data){
 data.map((el,index)=>{
     let count=1;
     
@@ -57,7 +57,7 @@ data.map((el,index)=>{
     // count_value.innerHTML=null;
   
        count_value.innerText=count
-       console.log(count)
+     
       }
       function decrease(count){
         //   count--
@@ -67,7 +67,7 @@ data.map((el,index)=>{
           }
           else{
         count_value.innerText=count
-        console.log(count)
+       
           }
         }
       })
@@ -126,7 +126,7 @@ data.map((el,index)=>{
     // count_value.innerHTML=null;
   
        count_value.innerText=count
-       console.log(count)
+       
       }
       function decrease(count){
           if(count<=0){
@@ -135,12 +135,12 @@ data.map((el,index)=>{
           }
           else{
         count_value.innerText=count
-        console.log(count)
+       
         }
     }
       }
       function remove(el,index){
-          console.log(el,index)
+         
           data.splice(index,1);
           localStorage.setItem("items",JSON.stringify(data));
           window.location.reload();
