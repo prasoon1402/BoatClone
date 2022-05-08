@@ -142,3 +142,6 @@ if(items.length>0){
 }else{
     cart[0].style.color = "white"
 }
+document.getElementById("atm").addEventListener("click",()=>{
+    window.location.href = "checkout.html"
+})
