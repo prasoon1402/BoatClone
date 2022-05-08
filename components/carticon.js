@@ -21,7 +21,7 @@ function slidebox(){
         </div>
         <div id="card">
           <button id="upi">Pay Via UPI/COD</button>
-          <button id="atm">Pay Via Card</button>
+         <a href="checkout.html"> <button id="atm">Pay Via Card</button></a>
         </div>
       </div>
   </div>
