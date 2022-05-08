@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/24c494a6b6.js" crossorigin="anonymous"></script>
+  <!-- experiment -->
+  <link rel="stylesheet" href="./styles/product.css">
+  <!-- experiment -->
+  <link rel="stylesheet" href="./styles/index.css">
+<link rel="stylesheet" href="./styles/home2.css">
+
+
+</head>
+
+<body>
+  <div id="navbar">
+   
+  </div>
+ 
+  <div id="menu">
+
+  </div>
+
+  <div id="more">
+   
+
+  </div>
+  <div id="home_lst_part"></div>
+  <div id="footer">
+  
+  </div> 
+  <!-- experiment -->
+  <div class="backdrop">
+  </div>
+</body>
+
+</html>
+<script src="./scripts/index.js" type="module"></script>
+<script src="./scripts/cart.js" type="module"></script>
+<!-- experiment -->
+<script>
+  $(document).ready(function() {
+$(".fa-cart-shopping").click(function() {
+  $(".backdrop").fadeTo(200, 1);
+});
+$("#but2").click(function() {
+  $(".backdrop").fadeOut(200);
+});
+});
+</script>
