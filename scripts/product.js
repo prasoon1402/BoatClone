@@ -67,7 +67,7 @@ add_cart.addEventListener("click",()=>{
     localStorage.setItem("items",JSON.stringify(arr));
     showas_data(el);
     // window.location.reload();
-//   showas_data(el,index);
+//   showas_data(el;
 
 })
 add_cart.setAttribute("id","add_cart")
@@ -112,7 +112,7 @@ desc2.innerText=el.disc2;
 img2_div.append(img2,desc2)
 document.getElementById("img_div2").append(img2_div)
 })
-show_data(arr);
+show_data();
 
 let user = document.getElementsByClassName("fa-user");
 user[0].addEventListener("click",()=>{
@@ -142,6 +142,3 @@ if(items.length>0){
 }else{
     cart[0].style.color = "white"
 }
-document.getElementById("atm").addEventListener("click",()=>{
-    window.location.href = "checkout.html"
-})

@@ -50,9 +50,11 @@ let box1=document.createElement("div");
          stardiv.setAttribute("id","stardiv");
                 let star=document.createElement("i");
                 star.setAttribute("id","star")
+                for(let i=0;i<5;i++){
+                    stardiv.innerHTML+=`<i class="fa-solid fa-star">`;
+                }
                 let view=document.createElement("p");
-                view.setAttribute("id","view")
-                stardiv.innerHTML=`<i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>`
+                view.setAttribute("id","view");
                 view.innerText="5(9 reviews)";
         stardiv.append(star,view);
 
@@ -115,9 +117,8 @@ let box1=document.createElement("div");
                notify1.setAttribute("id","notify1");
                notify1.innerText="SOLD OUT"
                let notify2=document.createElement("button");
-               notify1.setAttribute("id","notify2");
-               notify2.innerText="NOTIFY ME"
-            //    notify2.addEventListener()
+               notify2.setAttribute("id","notify2");
+               notify2.innerText="NOTIFY ME";
         notify.append(notify1,notify2)
 
     contentbox.append(gifthead,stardiv,pricediv,info,discount,price_image,notify);
@@ -206,22 +207,65 @@ let box1=document.createElement("div");
         lastdiv.innerText="You may also like"
         lastdiv.setAttribute("id","lastdiv")
         let lastdiv2=document.createElement("div");
+        lastdiv2.setAttribute("id","lastdiv2");
         fetch("./Data/randomdata.json").then(res => res.json()).then(data =>{
           
-            console.log(data.randomdata)
-            for(let i =0;i<4;i++){
-                let product=document.createElement('div')
-                
-
-                // product.addEventListener("click",()=>{
-                //     let arr=[];
-                //     arr.push(el)
-                //     localStorage.setItem("details1",JSON.stringify(arr))
-                // })
-
-                console.log(data.randomdata[i])
-            }
+            // console.log(data.randomdata)
+            main(data.randomdata)
+            // console.log(data.airpods)
         })
+       
+        function main(data){
+            for(let i =0;i<4;i++){
+               
+                    let product=document.createElement('div')
+                    product.setAttribute("id","allproduct")
+                     product.addEventListener("click",()=>{
+                        let arr=[];
+                        arr.push(data[i])
+                        localStorage.setItem("details1",JSON.stringify(arr))
+                        window.location.href="product.html";
+                    })
+                       let last_img_div=document.createElement("div");
+                       let lastimage=document.createElement("img");
+                       lastimage.src=data[i].image;
+                       lastimage.setAttribute("id","lastimage")
+                       last_img_div.append(lastimage);
+
+                       let last_info=document.createElement("div");
+                       last_info.setAttribute("id","last_info")
+                           let last_rating=document.createElement("p");
+                           last_rating.setAttribute("id","lastrating");
+                           last_rating.innerHTML=`<i class="fa-solid fa-star "id="rate"></i>${data[i].rating}`;
+
+                       let last_title=document.createElement("p");
+                       last_title.setAttribute("id","title");
+                       last_title.innerText=data[i].title;
+
+                       let last_price_div=document.createElement("div");
+                       last_price_div.setAttribute("id","lastprice");
+                            let last_price=document.createElement("p")
+                            last_price.setAttribute("id","lastprice1")
+                            last_price.innerText=`₹${data[i].price}`;
+                            let last_btn=document.createElement("button");
+                            last_btn.innerText="ADD+"
+                            last_btn.setAttribute("id","last_btn");
+                       last_price_div.append(last_price,last_btn);
+
+                       last_info.append(last_rating,last_title,last_price_div)
+                       product.append(last_img_div,last_info);
+         lastdiv2.append(product)
+       
+                   
+    
+                    // console.log(data.randomdata[i])
+                    box6.append(lastdiv,lastdiv2,lastdiv3)
+mainbox.append(box1,box2,box3,box4,box5,box6);
+        }
+    }
+    let lastdiv3=document.createElement("div");
+    lastdiv3.setAttribute("id","end")
+    lastdiv3.innerText="India's fastest growing audio & wearables brand. The most incredible range of wireless earphones, earbuds, headphones, smart watches, and home audio. From workouts to adventures, boAt will get you sailing!"
     
     box6.append(lastdiv,lastdiv2)
     mainbox.append(box1,box2,box3,box4,box5,box6);

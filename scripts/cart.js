@@ -2,7 +2,7 @@ let data=JSON.parse(localStorage.getItem("items"));
 console.log("data",data);
 // let count=1;
 
-function show_data(data){
+function show_data(){
 data.map((el,index)=>{
     let count=1;
     
@@ -139,11 +139,17 @@ data.map((el,index)=>{
         }
     }
       }
+    //   function remove1(el,index){
+         
+    //       data.splice(index,1);
+    //       localStorage.setItem("items",JSON.stringify(data));
+    //       window.location.reload();
+    //   }
       function remove(el,index){
          
-          data.splice(index,1);
-          localStorage.setItem("items",JSON.stringify(data));
-          window.location.reload();
-      }
+        data.splice(index,1);
+        localStorage.setItem("items",JSON.stringify(data));
+        window.location.reload();
+    }
       
 export {show_data,showas_data}
